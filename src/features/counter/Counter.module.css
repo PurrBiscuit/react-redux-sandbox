@@ -53,6 +53,14 @@
   background-color: rgba(112, 76, 182, 0.2);
 }
 
+.day {
+  color: black;
+}
+
+.night {
+  color: white;
+}
+
 .asyncButton {
   composes: button;
   position: relative;

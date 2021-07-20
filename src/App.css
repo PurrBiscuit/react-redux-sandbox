@@ -26,6 +26,16 @@
   color: rgb(112, 76, 182);
 }
 
+.day {
+  background-color: white;
+  color: black;
+}
+
+.night {
+  background-color: black;
+  color: white;
+}
+
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { backgroundSelector } from '../theme/backgroundSlice';
+
 import {
   decrement,
   increment,
@@ -7,15 +10,19 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
-import styles from './Counter.module.css';
+} from './counterSlice'
+
+import styles from './Counter.module.css'
 
 export function Counter() {
-  const count = useSelector(selectCount);
-  const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const count = useSelector(selectCount)
+  const backgroundTheme = useSelector(backgroundSelector)
+  const dispatch = useDispatch()
+  const [incrementAmount, setIncrementAmount] = useState('2')
 
-  const incrementValue = Number(incrementAmount) || 0;
+  const textColor = backgroundTheme === 'day' ? styles.day : styles.night
+
+  const incrementValue = Number(incrementAmount) || 0
 
   return (
     <div>
@@ -27,7 +34,7 @@ export function Counter() {
         >
           -
         </button>
-        <span className={styles.value}>{count}</span>
+        <span className={`${styles.value} ${textColor}`}>{count}</span>
         <button
           className={styles.button}
           aria-label="Increment value"

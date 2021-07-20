@@ -1,12 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from 'react'
+import { useSelector } from 'react-redux'
+
+import { Background } from './features/theme/Background'
+import { backgroundSelector } from './features/theme/backgroundSlice'
+import { Counter } from './features/counter/Counter'
+import logo from './logo.svg'
+
+import './App.css'
 
 function App() {
+  const backgroundTheme = useSelector(backgroundSelector)
+
   return (
-    <div className="App">
+    <div className={`App ${backgroundTheme}`}>
       <header className="App-header">
+        <Background />
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
