@@ -8,7 +8,7 @@ export const Background = () => {
 
   return <button
     className={styles.button}
-    aria-label="Increment value"
+    aria-label="Toggle Background"
     onClick={() => dispatch(toggle())}
   >
     Toogle Background
